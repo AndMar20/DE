@@ -10,13 +10,19 @@
 
         public int SupplierId { get; set; }
 
+        public string? Supplier { get; set; }
+
         public int ManufacturerId { get; set; }
+
+        public string? Manufacturer { get; set; }
 
         public bool Category { get; set; }
 
         public double Discount { get; set; }
 
         public int StockQuantity { get; set; }
+
+        public string UnitOfMeasure { get; set; } = "шт.";
 
         public string Description { get; set; } = null!;
 

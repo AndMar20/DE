@@ -14,7 +14,10 @@ namespace DE.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DeProductDto>>> GetDeProducts()
         {
-            var products = await context.DeProducts.ToListAsync();
+            var products = await context.DeProducts
+                .Include(p => p.Manufacturer)
+                .Include(p => p.Supplier)
+                .ToListAsync();
             if (!products.Any())
                 return NotFound();
 

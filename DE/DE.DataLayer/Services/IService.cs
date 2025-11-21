@@ -3,9 +3,9 @@
     public interface IService<TDto> where TDto : class
     {
         Task<List<TDto?>?> GetAllAsync();
-        Task<TDto?> GetAsync(int id);
+        Task<TDto?> GetAsync(string id);
         Task UpdateAsync(TDto entity);
         Task AddAsync(TDto entity);
-        Task DeleteAsync(int id);
+        Task DeleteAsync(string id);
     }
 }

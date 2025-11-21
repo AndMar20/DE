@@ -14,27 +14,19 @@ namespace DE.DataLayer.Services
             _client.BaseAddress = new Uri(_url);
         }
 
-        public Task AddAsync(DeProductDto entity)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task AddAsync(DeProductDto entity)
+            => (await _client.PostAsJsonAsync(string.Empty, entity)).EnsureSuccessStatusCode();
 
-        public Task DeleteAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task DeleteAsync(string id)
+            => (await _client.DeleteAsync(id)).EnsureSuccessStatusCode();
 
         public async Task<List<DeProductDto?>?> GetAllAsync()
             => await _client.GetFromJsonAsync<List<DeProductDto?>?>("");
 
-        public Task<DeProductDto?> GetAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<DeProductDto?> GetAsync(string id)
+            => await _client.GetFromJsonAsync<DeProductDto>(id);
 
-        public Task UpdateAsync(DeProductDto entity)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task UpdateAsync(DeProductDto entity)
+            => (await _client.PutAsJsonAsync(entity.Id, entity)).EnsureSuccessStatusCode();
     }
 }
