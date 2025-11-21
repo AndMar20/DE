@@ -23,10 +23,13 @@ namespace DE.DataLayer.DTOs.DeProducts
                 ProductName = deProduct.ProductName,
                 Price = deProduct.Price,
                 SupplierId = deProduct.SupplierId,
+                Supplier = deProduct.Supplier?.Supplier,
                 ManufacturerId = deProduct.ManufacturerId,
+                Manufacturer = deProduct.Manufacturer?.Manufacturer,
                 Category = deProduct.Category,
                 Discount = deProduct.Discount,
                 StockQuantity = deProduct.StockQuantity,
+                UnitOfMeasure = "шт.",
                 Description = deProduct.Description,
                 Photo = photoUrl
             };
