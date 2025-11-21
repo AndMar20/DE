@@ -1,0 +1,19 @@
+﻿<Page x:Class="DE.Client.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DE.Client.Pages"
+      mc:Ignorable="d" 
+      Title="Login">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+            <TextBlock Text="Вход в систему" FontSize="24" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+            <TextBox x:Name="UsernameBox" Margin="0,5" Padding="5" Text="admin"/>
+            <PasswordBox x:Name="PasswordBox" Margin="0,5" Padding="5" Password="123"/>
+            <Button x:Name="LoginButton" Content="Войти" Click="LoginButton_Click" Margin="0,20" Padding="10"/>
+            <Button x:Name="ProductsButton" Click="ProductsButton_Click" Content="Перейти к товарам"/>
+        </StackPanel>
+    </Grid>
+</Page>
