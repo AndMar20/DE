@@ -25,24 +25,24 @@ namespace DE.Client.Pages
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public ObservableCollection<DeProductDto> Products { get; } = new();
+        public ObservableCollection<DeProductDto> Products { get; } = [];
         public ICollectionView ProductsView { get; }
 
-        public ObservableCollection<string> SortOptions { get; } = new()
-        {
+        public ObservableCollection<string> SortOptions { get; } =
+        [
             "Без сортировки",
             "Цена по возрастанию",
             "Цена по убыванию",
             "Скидка по убыванию"
-        };
+        ];
 
-        public ObservableCollection<string> DiscountFilters { get; } = new()
-        {
+        public ObservableCollection<string> DiscountFilters { get; } =
+        [
             "Все скидки",
             "До 5%",
             "5% - 15%",
             "От 15%"
-        };
+        ];
 
         public string SearchQuery
         {
@@ -220,7 +220,7 @@ namespace DE.Client.Pages
             return true;
         }
 
-        private decimal? TryParsePrice(string value)
+        private static decimal? TryParsePrice(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
                 return null;
