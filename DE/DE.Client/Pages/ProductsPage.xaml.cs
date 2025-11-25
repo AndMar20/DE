@@ -8,6 +8,7 @@ using System.Windows.Data;
 using System.Windows;
 using System.Globalization;
 using System.Windows.Media;
+using System.Linq;
 
 namespace DE.Client.Pages
 {
@@ -17,11 +18,19 @@ namespace DE.Client.Pages
         private string _searchQuery = string.Empty;
         private string _selectedSortOption;
         private string _selectedDiscountFilter;
+        private string _minPriceText = string.Empty;
+        private string _maxPriceText = string.Empty;
+        private decimal? _minPriceFilter;
+        private decimal? _maxPriceFilter;
+        private bool _showOnlyAvailable;
+        private readonly ObservableCollection<CartItem> _cartItems = new();
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public ObservableCollection<DeProductDto> Products { get; } = new();
         public ICollectionView ProductsView { get; }
+
+        public ReadOnlyObservableCollection<CartItem> CartItems { get; }
 
         public ObservableCollection<string> SortOptions { get; } = new()
         {
@@ -38,6 +47,8 @@ namespace DE.Client.Pages
             "5% - 15%",
             "От 15%"
         };
+
+        public int CartItemCount => _cartItems.Sum(c => c.Quantity);
 
         public string SearchQuery
         {
@@ -78,7 +89,51 @@ namespace DE.Client.Pages
             }
         }
 
-        public int FilteredCount => ProductsView?.Count ?? 0;
+        public int FilteredCount => ProductsView?.Cast<object>().Count() ?? 0;
+
+        public string MinPriceFilterText
+        {
+            get => _minPriceText;
+            set
+            {
+                if (_minPriceText == value)
+                    return;
+
+                _minPriceText = value;
+                _minPriceFilter = TryParsePrice(value);
+                OnPropertyChanged(nameof(MinPriceFilterText));
+                ApplyFilters();
+            }
+        }
+
+        public string MaxPriceFilterText
+        {
+            get => _maxPriceText;
+            set
+            {
+                if (_maxPriceText == value)
+                    return;
+
+                _maxPriceText = value;
+                _maxPriceFilter = TryParsePrice(value);
+                OnPropertyChanged(nameof(MaxPriceFilterText));
+                ApplyFilters();
+            }
+        }
+
+        public bool OnlyShowAvailable
+        {
+            get => _showOnlyAvailable;
+            set
+            {
+                if (_showOnlyAvailable == value)
+                    return;
+
+                _showOnlyAvailable = value;
+                OnPropertyChanged(nameof(OnlyShowAvailable));
+                ApplyFilters();
+            }
+        }
 
         public ProductsPage()
         {
@@ -86,6 +141,9 @@ namespace DE.Client.Pages
 
             var httpClient = new HttpClient();
             _productsService = new DeProductsService(httpClient);
+
+            CartItems = new ReadOnlyObservableCollection<CartItem>(_cartItems);
+            _cartItems.CollectionChanged += (_, __) => OnPropertyChanged(nameof(CartItemCount));
 
             ProductsView = CollectionViewSource.GetDefaultView(Products);
             ProductsView.Filter = FilterProducts;
@@ -108,9 +166,9 @@ namespace DE.Client.Pages
                 if (products != null)
                 {
                     Products.Clear();
-                    foreach (var product in products)
+                    foreach (var product in products.Where(p => p != null))
                     {
-                        Products.Add(product);
+                        Products.Add(product!);
                     }
                 }
 
@@ -148,13 +206,41 @@ namespace DE.Client.Pages
                     return false;
             }
 
-            return SelectedDiscountFilter switch
+            bool discountMatches = SelectedDiscountFilter switch
             {
                 "До 5%" => product.Discount < 5,
                 "5% - 15%" => product.Discount >= 5 && product.Discount < 15,
                 "От 15%" => product.Discount >= 15,
                 _ => true
             };
+
+            if (!discountMatches)
+                return false;
+
+            if (_minPriceFilter.HasValue && product.PriceWithDiscount < _minPriceFilter.Value)
+                return false;
+
+            if (_maxPriceFilter.HasValue && product.PriceWithDiscount > _maxPriceFilter.Value)
+                return false;
+
+            if (OnlyShowAvailable && !product.IsInStock)
+                return false;
+
+            return true;
+        }
+
+        private decimal? TryParsePrice(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                return null;
+
+            if (decimal.TryParse(value, NumberStyles.Number, CultureInfo.CurrentCulture, out var parsed) && parsed >= 0)
+                return parsed;
+
+            if (decimal.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture, out parsed) && parsed >= 0)
+                return parsed;
+
+            return null;
         }
 
         private void ApplyFilters()
@@ -186,10 +272,77 @@ namespace DE.Client.Pages
             ApplyFilters();
         }
 
+        private void AddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is not Button button)
+                return;
+
+            var product = button.CommandParameter as DeProductDto ?? button.DataContext as DeProductDto;
+
+            if (product is null)
+                return;
+
+            AddToCart(product);
+        }
+
+        private void AddToCart(DeProductDto product)
+        {
+            var existing = _cartItems.FirstOrDefault(c => c.Product.Id == product.Id);
+
+            if (existing != null)
+            {
+                existing.Quantity += 1;
+            }
+            else
+            {
+                var newItem = new CartItem(product, 1);
+                newItem.PropertyChanged += CartItem_PropertyChanged;
+                _cartItems.Add(newItem);
+            }
+
+            OnPropertyChanged(nameof(CartItemCount));
+        }
+
+        private void CartItem_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(CartItem.Quantity))
+            {
+                OnPropertyChanged(nameof(CartItemCount));
+            }
+        }
+
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+    }
+
+    public class CartItem : INotifyPropertyChanged
+    {
+        private int _quantity;
+
+        public CartItem(DeProductDto product, int quantity = 1)
+        {
+            Product = product;
+            _quantity = quantity;
+        }
+
+        public DeProductDto Product { get; }
+
+        public int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                if (_quantity == value)
+                    return;
+
+                _quantity = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Quantity)));
+            }
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 
     public class DiscountToBackgroundConverter : IValueConverter
