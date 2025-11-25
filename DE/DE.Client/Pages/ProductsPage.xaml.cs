@@ -23,14 +23,17 @@ namespace DE.Client.Pages
         private decimal? _minPriceFilter;
         private decimal? _maxPriceFilter;
         private bool _showOnlyAvailable;
+        private readonly ObservableCollection<CartItem> _cartItems = new();
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public ObservableCollection<DeProductDto> Products { get; } = [];
         public ICollectionView ProductsView { get; }
 
-        public ObservableCollection<string> SortOptions { get; } =
-        [
+        public ReadOnlyObservableCollection<CartItem> CartItems { get; }
+
+        public ObservableCollection<string> SortOptions { get; } = new()
+        {
             "Без сортировки",
             "Цена по возрастанию",
             "Цена по убыванию",
@@ -44,6 +47,8 @@ namespace DE.Client.Pages
             "5% - 15%",
             "От 15%"
         ];
+
+        public int CartItemCount => _cartItems.Sum(c => c.Quantity);
 
         public string SearchQuery
         {
@@ -136,6 +141,9 @@ namespace DE.Client.Pages
 
             var httpClient = new HttpClient();
             _productsService = new DeProductsService(httpClient);
+
+            CartItems = new ReadOnlyObservableCollection<CartItem>(_cartItems);
+            _cartItems.CollectionChanged += (_, __) => OnPropertyChanged(nameof(CartItemCount));
 
             ProductsView = CollectionViewSource.GetDefaultView(Products);
             ProductsView.Filter = FilterProducts;
@@ -264,10 +272,77 @@ namespace DE.Client.Pages
             ApplyFilters();
         }
 
+        private void AddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is not Button button)
+                return;
+
+            var product = button.CommandParameter as DeProductDto ?? button.DataContext as DeProductDto;
+
+            if (product is null)
+                return;
+
+            AddToCart(product);
+        }
+
+        private void AddToCart(DeProductDto product)
+        {
+            var existing = _cartItems.FirstOrDefault(c => c.Product.Id == product.Id);
+
+            if (existing != null)
+            {
+                existing.Quantity += 1;
+            }
+            else
+            {
+                var newItem = new CartItem(product, 1);
+                newItem.PropertyChanged += CartItem_PropertyChanged;
+                _cartItems.Add(newItem);
+            }
+
+            OnPropertyChanged(nameof(CartItemCount));
+        }
+
+        private void CartItem_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(CartItem.Quantity))
+            {
+                OnPropertyChanged(nameof(CartItemCount));
+            }
+        }
+
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+    }
+
+    public class CartItem : INotifyPropertyChanged
+    {
+        private int _quantity;
+
+        public CartItem(DeProductDto product, int quantity = 1)
+        {
+            Product = product;
+            _quantity = quantity;
+        }
+
+        public DeProductDto Product { get; }
+
+        public int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                if (_quantity == value)
+                    return;
+
+                _quantity = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Quantity)));
+            }
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 
     public class DiscountToBackgroundConverter : IValueConverter
