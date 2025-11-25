@@ -1,5 +1,4 @@
 ﻿using DE.DataLayer.Models;
-using System.Runtime.CompilerServices;
 
 namespace DE.DataLayer.DTOs.DeProducts
 {
@@ -10,11 +9,15 @@ namespace DE.DataLayer.DTOs.DeProducts
             if (deProduct is null)
                 throw new ArgumentNullException(nameof(deProduct));
 
-            string? photoUrl = deProduct.Photo;
-            if (!string.IsNullOrEmpty(deProduct.Photo) && !string.IsNullOrEmpty(baseUrl))
+            string? photoUrl = null;
+            if (!string.IsNullOrWhiteSpace(deProduct.Photo))
             {
-                // Убираем слэш в конце baseUrl, если есть, и добавляем путь к фото
-                photoUrl = $"{baseUrl.TrimEnd('/')}/images/products/{deProduct.Photo}";
+                var photoFileName = deProduct.Photo.Contains('.') ? deProduct.Photo : $"{deProduct.Photo}.jpg";
+
+                // При наличии baseUrl формируем абсолютный путь для API, иначе используем локальный ресурс из каталога Photos
+                photoUrl = string.IsNullOrEmpty(baseUrl)
+                    ? $"Photos/{photoFileName}"
+                    : $"{baseUrl.TrimEnd('/')}/images/products/{photoFileName}";
             }
 
             return new DeProductDto
@@ -31,7 +34,8 @@ namespace DE.DataLayer.DTOs.DeProducts
                 StockQuantity = deProduct.StockQuantity,
                 UnitOfMeasure = "шт.",
                 Description = deProduct.Description,
-                Photo = photoUrl
+                Photo = photoUrl,
+                PriceWithDiscount = deProduct.Price - deProduct.Price * (decimal)deProduct.Discount / 100
             };
         }
     }
