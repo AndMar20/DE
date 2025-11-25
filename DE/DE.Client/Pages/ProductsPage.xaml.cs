@@ -23,16 +23,16 @@ namespace DE.Client.Pages
         private decimal? _minPriceFilter;
         private decimal? _maxPriceFilter;
         private bool _showOnlyAvailable;
-        private readonly ObservableCollection<CartItem> _cartItems = new();
+        private readonly ObservableCollection<CartItem> _cartItems = new ObservableCollection<CartItem>();
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public ObservableCollection<DeProductDto> Products { get; } = [];
+        public ObservableCollection<DeProductDto> Products { get; } = new ObservableCollection<DeProductDto>();
         public ICollectionView ProductsView { get; }
 
         public ReadOnlyObservableCollection<CartItem> CartItems { get; }
 
-        public ObservableCollection<string> SortOptions { get; } = new()
+        public ObservableCollection<string> SortOptions { get; } = new ObservableCollection<string>()
         {
             "Без сортировки",
             "Цена по возрастанию",
@@ -40,13 +40,15 @@ namespace DE.Client.Pages
             "Скидка по убыванию"
         ];
 
-        public ObservableCollection<string> DiscountFilters { get; } =
-        [
+        public ObservableCollection<string> DiscountFilters { get; } = new ObservableCollection<string>()
+        {
             "Все скидки",
             "До 5%",
             "5% - 15%",
             "От 15%"
         ];
+
+        public int CartItemCount => _cartItems.Sum(c => c.Quantity);
 
         public int CartItemCount => _cartItems.Sum(c => c.Quantity);
 
@@ -229,7 +231,7 @@ namespace DE.Client.Pages
             return true;
         }
 
-        private decimal? TryParsePrice(string value)
+        private static decimal? TryParsePrice(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
                 return null;
