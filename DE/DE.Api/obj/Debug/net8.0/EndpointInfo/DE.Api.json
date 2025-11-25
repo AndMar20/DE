@@ -391,9 +391,17 @@
             "type": "integer",
             "format": "int32"
           },
+          "supplier": {
+            "type": "string",
+            "nullable": true
+          },
           "manufacturerId": {
             "type": "integer",
             "format": "int32"
+          },
+          "manufacturer": {
+            "type": "string",
+            "nullable": true
           },
           "category": {
             "type": "boolean"
@@ -406,6 +414,10 @@
             "type": "integer",
             "format": "int32"
           },
+          "unitOfMeasure": {
+            "type": "string",
+            "nullable": true
+          },
           "description": {
             "type": "string",
             "nullable": true
@@ -413,6 +425,14 @@
           "photo": {
             "type": "string",
             "nullable": true
+          },
+          "priceWithDiscount": {
+            "type": "number",
+            "format": "double"
+          },
+          "isInStock": {
+            "type": "boolean",
+            "readOnly": true
           }
         },
         "additionalProperties": false
