@@ -17,6 +17,11 @@ namespace DE.Client.Pages
         private string _searchQuery = string.Empty;
         private string _selectedSortOption;
         private string _selectedDiscountFilter;
+        private string _minPriceText = string.Empty;
+        private string _maxPriceText = string.Empty;
+        private decimal? _minPriceFilter;
+        private decimal? _maxPriceFilter;
+        private bool _showOnlyAvailable;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -79,6 +84,50 @@ namespace DE.Client.Pages
         }
 
         public int FilteredCount => ProductsView?.Count ?? 0;
+
+        public string MinPriceText
+        {
+            get => _minPriceText;
+            set
+            {
+                if (_minPriceText == value)
+                    return;
+
+                _minPriceText = value;
+                _minPriceFilter = TryParsePrice(value);
+                OnPropertyChanged(nameof(MinPriceText));
+                ApplyFilters();
+            }
+        }
+
+        public string MaxPriceText
+        {
+            get => _maxPriceText;
+            set
+            {
+                if (_maxPriceText == value)
+                    return;
+
+                _maxPriceText = value;
+                _maxPriceFilter = TryParsePrice(value);
+                OnPropertyChanged(nameof(MaxPriceText));
+                ApplyFilters();
+            }
+        }
+
+        public bool ShowOnlyAvailable
+        {
+            get => _showOnlyAvailable;
+            set
+            {
+                if (_showOnlyAvailable == value)
+                    return;
+
+                _showOnlyAvailable = value;
+                OnPropertyChanged(nameof(ShowOnlyAvailable));
+                ApplyFilters();
+            }
+        }
 
         public ProductsPage()
         {
@@ -148,13 +197,41 @@ namespace DE.Client.Pages
                     return false;
             }
 
-            return SelectedDiscountFilter switch
+            bool discountMatches = SelectedDiscountFilter switch
             {
                 "До 5%" => product.Discount < 5,
                 "5% - 15%" => product.Discount >= 5 && product.Discount < 15,
                 "От 15%" => product.Discount >= 15,
                 _ => true
             };
+
+            if (!discountMatches)
+                return false;
+
+            if (_minPriceFilter.HasValue && product.PriceWithDiscount < _minPriceFilter.Value)
+                return false;
+
+            if (_maxPriceFilter.HasValue && product.PriceWithDiscount > _maxPriceFilter.Value)
+                return false;
+
+            if (ShowOnlyAvailable && !product.IsInStock)
+                return false;
+
+            return true;
+        }
+
+        private decimal? TryParsePrice(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                return null;
+
+            if (decimal.TryParse(value, NumberStyles.Number, CultureInfo.CurrentCulture, out var parsed) && parsed >= 0)
+                return parsed;
+
+            if (decimal.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture, out parsed) && parsed >= 0)
+                return parsed;
+
+            return null;
         }
 
         private void ApplyFilters()
