@@ -27,5 +27,9 @@
         public string Description { get; set; } = null!;
 
         public string? Photo { get; set; }
+
+        public decimal PriceWithDiscount { get; set; }
+
+        public bool IsInStock => StockQuantity > 0;
     }
 }
