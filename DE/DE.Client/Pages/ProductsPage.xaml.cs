@@ -8,6 +8,7 @@ using System.Windows.Data;
 using System.Windows;
 using System.Globalization;
 using System.Windows.Media;
+using System.Linq;
 
 namespace DE.Client.Pages
 {
@@ -83,7 +84,51 @@ namespace DE.Client.Pages
             }
         }
 
-        public int FilteredCount => ProductsView?.Count ?? 0;
+        public int FilteredCount => ProductsView?.Cast<object>().Count() ?? 0;
+
+        public string MinPriceFilterText
+        {
+            get => _minPriceText;
+            set
+            {
+                if (_minPriceText == value)
+                    return;
+
+                _minPriceText = value;
+                _minPriceFilter = TryParsePrice(value);
+                OnPropertyChanged(nameof(MinPriceFilterText));
+                ApplyFilters();
+            }
+        }
+
+        public string MaxPriceFilterText
+        {
+            get => _maxPriceText;
+            set
+            {
+                if (_maxPriceText == value)
+                    return;
+
+                _maxPriceText = value;
+                _maxPriceFilter = TryParsePrice(value);
+                OnPropertyChanged(nameof(MaxPriceFilterText));
+                ApplyFilters();
+            }
+        }
+
+        public bool OnlyShowAvailable
+        {
+            get => _showOnlyAvailable;
+            set
+            {
+                if (_showOnlyAvailable == value)
+                    return;
+
+                _showOnlyAvailable = value;
+                OnPropertyChanged(nameof(OnlyShowAvailable));
+                ApplyFilters();
+            }
+        }
 
         public string MinPriceText
         {
@@ -157,9 +202,9 @@ namespace DE.Client.Pages
                 if (products != null)
                 {
                     Products.Clear();
-                    foreach (var product in products)
+                    foreach (var product in products.Where(p => p != null))
                     {
-                        Products.Add(product);
+                        Products.Add(product!);
                     }
                 }
 
@@ -214,13 +259,13 @@ namespace DE.Client.Pages
             if (_maxPriceFilter.HasValue && product.PriceWithDiscount > _maxPriceFilter.Value)
                 return false;
 
-            if (ShowOnlyAvailable && !product.IsInStock)
+            if (OnlyShowAvailable && !product.IsInStock)
                 return false;
 
             return true;
         }
 
-        private static decimal? TryParsePrice(string value)
+        private decimal? TryParsePrice(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
                 return null;
