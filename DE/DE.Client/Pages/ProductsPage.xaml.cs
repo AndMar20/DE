@@ -130,50 +130,6 @@ namespace DE.Client.Pages
             }
         }
 
-        public string MinPriceText
-        {
-            get => _minPriceText;
-            set
-            {
-                if (_minPriceText == value)
-                    return;
-
-                _minPriceText = value;
-                _minPriceFilter = TryParsePrice(value);
-                OnPropertyChanged(nameof(MinPriceText));
-                ApplyFilters();
-            }
-        }
-
-        public string MaxPriceText
-        {
-            get => _maxPriceText;
-            set
-            {
-                if (_maxPriceText == value)
-                    return;
-
-                _maxPriceText = value;
-                _maxPriceFilter = TryParsePrice(value);
-                OnPropertyChanged(nameof(MaxPriceText));
-                ApplyFilters();
-            }
-        }
-
-        public bool ShowOnlyAvailable
-        {
-            get => _showOnlyAvailable;
-            set
-            {
-                if (_showOnlyAvailable == value)
-                    return;
-
-                _showOnlyAvailable = value;
-                OnPropertyChanged(nameof(ShowOnlyAvailable));
-                ApplyFilters();
-            }
-        }
-
         public ProductsPage()
         {
             InitializeComponent();
