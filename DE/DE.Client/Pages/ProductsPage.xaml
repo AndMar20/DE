@@ -49,23 +49,56 @@
                 BorderThickness="0 0 0 1"
                 Padding="10">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" >
-                <TextBox Width="220"
-                         Margin="0,0,10,0"
-                         VerticalContentAlignment="Center"
-                         Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
-                         ToolTip="Поиск по названию или описанию"
-                         Padding="6" />
+                <StackPanel Orientation="Vertical" Margin="0,0,10,0">
+                    <TextBlock Text="Поиск" FontWeight="SemiBold" Margin="0,0,0,4" />
+                    <TextBox Width="220"
+                             VerticalContentAlignment="Center"
+                             Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
+                             ToolTip="Поиск по названию или описанию"
+                             Padding="6" />
+                </StackPanel>
 
-                <ComboBox Width="180"
-                          Margin="0,0,10,0"
-                          ItemsSource="{Binding SortOptions}"
-                          SelectedItem="{Binding SelectedSortOption}"
-                          Padding="4" />
+                <StackPanel Orientation="Vertical" Margin="0,0,10,0">
+                    <TextBlock Text="Сортировка" FontWeight="SemiBold" Margin="0,0,0,4" />
+                    <ComboBox Width="180"
+                              ItemsSource="{Binding SortOptions}"
+                              SelectedItem="{Binding SelectedSortOption}"
+                              Padding="4" />
+                </StackPanel>
 
-                <ComboBox Width="160"
-                          ItemsSource="{Binding DiscountFilters}"
-                          SelectedItem="{Binding SelectedDiscountFilter}"
-                          Padding="4" />
+                <StackPanel Orientation="Vertical" Margin="0,0,10,0">
+                    <TextBlock Text="Скидка" FontWeight="SemiBold" Margin="0,0,0,4" />
+                    <ComboBox Width="160"
+                              ItemsSource="{Binding DiscountFilters}"
+                              SelectedItem="{Binding SelectedDiscountFilter}"
+                              Padding="4" />
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,0,10,0">
+                    <TextBlock Text="Цена от" FontWeight="SemiBold" Margin="0,0,0,4" />
+                    <TextBox Width="120"
+                             VerticalContentAlignment="Center"
+                             Text="{Binding MinPriceFilterText, UpdateSourceTrigger=PropertyChanged}"
+                             ToolTip="Минимальная цена"
+                             Padding="6" />
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,0,10,0">
+                    <TextBlock Text="Цена до" FontWeight="SemiBold" Margin="0,0,0,4" />
+                    <TextBox Width="120"
+                             VerticalContentAlignment="Center"
+                             Text="{Binding MaxPriceFilterText, UpdateSourceTrigger=PropertyChanged}"
+                             ToolTip="Максимальная цена"
+                             Padding="6" />
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="10,0,0,0" VerticalAlignment="Center">
+                    <TextBlock Text="Наличие" FontWeight="SemiBold" Margin="0,0,0,4" />
+                    <CheckBox Content="Только в наличии"
+                              VerticalAlignment="Center"
+                              IsChecked="{Binding OnlyShowAvailable}"
+                              FontWeight="SemiBold" />
+                </StackPanel>
             </StackPanel>
         </Border>
 
@@ -165,16 +198,43 @@
                                 <TextBlock Foreground="#2E7D32"
                                            Margin="0,0,0,5">
                                     <TextBlock.Text>
-                                        <Binding Path="Price" StringFormat="Цена: {0:#,0} ₽" />
+                                        <Binding Path="PriceWithDiscount" StringFormat="Цена со скидкой: {0:#,0} ₽" />
                                     </TextBlock.Text>
+                                </TextBlock>
+
+                                <TextBlock Text="{Binding Price, StringFormat='Старая цена: {0:#,0} ₽'}"
+                                           Margin="0,0,0,5"
+                                           Foreground="#9E9E9E"
+                                           TextDecorations="Strikethrough">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Discount}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
                                 </TextBlock>
 
                                 <TextBlock Text="{Binding UnitOfMeasure}"
                                            Margin="0,0,0,5" />
 
-                                <TextBlock Foreground="#1976D2"
-                                           Margin="0,0,0,5"
-                                           Text="{Binding StockQuantity, StringFormat='Количество на складе: {0} шт.'}" />
+                                <TextBlock Margin="0,0,0,5"
+                                           Text="{Binding StockQuantity, StringFormat='Количество на складе: {0} шт.'}">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="#1976D2" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsInStock}" Value="False">
+                                                    <Setter Property="Foreground" Value="#D32F2F" />
+                                                    <Setter Property="FontWeight" Value="SemiBold" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
 
                             </StackPanel>
 

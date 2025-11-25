@@ -31,7 +31,8 @@ namespace DE.DataLayer.DTOs.DeProducts
                 StockQuantity = deProduct.StockQuantity,
                 UnitOfMeasure = "шт.",
                 Description = deProduct.Description,
-                Photo = photoUrl
+                Photo = photoUrl,
+                PriceWithDiscount = deProduct.Price - deProduct.Price * (decimal)deProduct.Discount / 100
             };
         }
     }
