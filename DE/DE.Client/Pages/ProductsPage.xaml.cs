@@ -8,6 +8,7 @@ using System.Windows.Data;
 using System.Windows;
 using System.Globalization;
 using System.Windows.Media;
+using System.Linq;
 
 namespace DE.Client.Pages
 {
@@ -83,7 +84,51 @@ namespace DE.Client.Pages
             }
         }
 
-        public int FilteredCount => ProductsView?.Count ?? 0;
+        public int FilteredCount => ProductsView?.Cast<object>().Count() ?? 0;
+
+        public string MinPriceText
+        {
+            get => _minPriceText;
+            set
+            {
+                if (_minPriceText == value)
+                    return;
+
+                _minPriceText = value;
+                _minPriceFilter = TryParsePrice(value);
+                OnPropertyChanged(nameof(MinPriceText));
+                ApplyFilters();
+            }
+        }
+
+        public string MaxPriceText
+        {
+            get => _maxPriceText;
+            set
+            {
+                if (_maxPriceText == value)
+                    return;
+
+                _maxPriceText = value;
+                _maxPriceFilter = TryParsePrice(value);
+                OnPropertyChanged(nameof(MaxPriceText));
+                ApplyFilters();
+            }
+        }
+
+        public bool ShowOnlyAvailable
+        {
+            get => _showOnlyAvailable;
+            set
+            {
+                if (_showOnlyAvailable == value)
+                    return;
+
+                _showOnlyAvailable = value;
+                OnPropertyChanged(nameof(ShowOnlyAvailable));
+                ApplyFilters();
+            }
+        }
 
         public string MinPriceText
         {
@@ -220,7 +265,7 @@ namespace DE.Client.Pages
             return true;
         }
 
-        private static decimal? TryParsePrice(string value)
+        private decimal? TryParsePrice(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
                 return null;
