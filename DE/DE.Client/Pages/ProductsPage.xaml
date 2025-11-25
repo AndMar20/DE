@@ -48,7 +48,7 @@
                 BorderBrush="#00FA9A"
                 BorderThickness="0 0 0 1"
                 Padding="10">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center" >
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
                 <StackPanel Orientation="Vertical" Margin="0,0,10,0">
                     <TextBlock Text="Поиск" FontWeight="SemiBold" Margin="0,0,0,4" />
                     <TextBox Width="220"
@@ -99,7 +99,7 @@
                               IsChecked="{Binding OnlyShowAvailable}"
                               FontWeight="SemiBold" />
                 </StackPanel>
-            </StackPanel>
+            </WrapPanel>
         </Border>
 
         <ListView Grid.Row="2"
