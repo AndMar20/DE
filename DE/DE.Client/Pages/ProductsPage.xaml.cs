@@ -38,7 +38,7 @@ namespace DE.Client.Pages
             "Цена по возрастанию",
             "Цена по убыванию",
             "Скидка по убыванию"
-        };
+        ];
 
         public ObservableCollection<string> DiscountFilters { get; } = new ObservableCollection<string>()
         {
@@ -46,7 +46,9 @@ namespace DE.Client.Pages
             "До 5%",
             "5% - 15%",
             "От 15%"
-        };
+        ];
+
+        public int CartItemCount => _cartItems.Sum(c => c.Quantity);
 
         public int CartItemCount => _cartItems.Sum(c => c.Quantity);
 
