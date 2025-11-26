@@ -6,8 +6,6 @@ using System.Net.Http;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows;
-using System.Globalization;
-using System.Windows.Media;
 using System.Linq;
 
 namespace DE.Client.Pages
@@ -343,41 +341,5 @@ namespace DE.Client.Pages
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
-    }
-
-    public class DiscountToBackgroundConverter : IValueConverter
-    {
-        public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-        {
-            if (value is double discount && discount >= 15)
-            {
-                return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#2E8B57"));
-            }
-
-            return Brushes.White;
-        }
-
-        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class DiscountToForegroundConverter : IValueConverter
-    {
-        public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-        {
-            if (value is double discount && discount >= 15)
-            {
-                return Brushes.White;
-            }
-
-            return Brushes.Black;
-        }
-
-        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

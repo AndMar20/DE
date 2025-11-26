@@ -6,12 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>0.ICO</ApplicationIcon>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="0.ICO" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DE.DataLayer\DE.DataLayer.csproj" />
