@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Temp\\ispp21\\DE\\DE\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|c:\\temp\\ispp21\\de\\de\\de.client\\de.client.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|solutionrelative:de.client\\de.client.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|c:\\temp\\ispp21\\de\\de\\de.client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|solutionrelative:de.client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD632DF-CF55-40D1-B809-A03244B45BC9}|DE.DataLayer\\DE.DataLayer.csproj|c:\\temp\\ispp21\\de\\de\\de.datalayer\\de.datalayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3BD632DF-CF55-40D1-B809-A03244B45BC9}|DE.DataLayer\\DE.DataLayer.csproj|solutionrelative:de.datalayer\\de.datalayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BD632DF-CF55-40D1-B809-A03244B45BC9}|DE.DataLayer\\DE.DataLayer.csproj|c:\\temp\\ispp21\\de\\de\\de.datalayer\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD632DF-CF55-40D1-B809-A03244B45BC9}|DE.DataLayer\\DE.DataLayer.csproj|solutionrelative:de.datalayer\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{453AFE5D-D9E1-44E5-AD16-F40957167FF9}|DE.Api\\DE.Api.csproj|c:\\temp\\ispp21\\de\\de\\de.api\\controllers\\deproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{453AFE5D-D9E1-44E5-AD16-F40957167FF9}|DE.Api\\DE.Api.csproj|solutionrelative:de.api\\controllers\\deproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|c:\\temp\\ispp21\\de\\de\\de.client\\de.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|solutionrelative:de.client\\de.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|c:\\temp\\ispp21\\de\\de\\de.client\\pages\\productspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|solutionrelative:de.client\\pages\\productspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -15,28 +39,8 @@
       "RelativeMoniker": "D:0:0:{3BD632DF-CF55-40D1-B809-A03244B45BC9}|DE.DataLayer\\DE.DataLayer.csproj|solutionrelative:de.datalayer\\models\\deproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BD632DF-CF55-40D1-B809-A03244B45BC9}|DE.DataLayer\\DE.DataLayer.csproj|c:\\temp\\ispp21\\de\\de\\de.datalayer\\de.datalayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3BD632DF-CF55-40D1-B809-A03244B45BC9}|DE.DataLayer\\DE.DataLayer.csproj|solutionrelative:de.datalayer\\de.datalayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3BD632DF-CF55-40D1-B809-A03244B45BC9}|DE.DataLayer\\DE.DataLayer.csproj|c:\\temp\\ispp21\\de\\de\\de.datalayer\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3BD632DF-CF55-40D1-B809-A03244B45BC9}|DE.DataLayer\\DE.DataLayer.csproj|solutionrelative:de.datalayer\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|c:\\temp\\ispp21\\de\\de\\de.client\\de.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|solutionrelative:de.client\\de.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|c:\\temp\\ispp21\\de\\de\\de.client\\pages\\productspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|solutionrelative:de.client\\pages\\productspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{453AFE5D-D9E1-44E5-AD16-F40957167FF9}|DE.Api\\DE.Api.csproj|c:\\temp\\ispp21\\de\\de\\de.api\\controllers\\deproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{453AFE5D-D9E1-44E5-AD16-F40957167FF9}|DE.Api\\DE.Api.csproj|solutionrelative:de.api\\controllers\\deproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|c:\\temp\\ispp21\\de\\de\\de.client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|solutionrelative:de.client\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,46 +62,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DeProductDto.cs",
-              "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\DTOs\\DeProducts\\DeProductDto.cs",
-              "RelativeDocumentMoniker": "DE.DataLayer\\DTOs\\DeProducts\\DeProductDto.cs",
-              "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\DTOs\\DeProducts\\DeProductDto.cs",
-              "RelativeToolTip": "DE.DataLayer\\DTOs\\DeProducts\\DeProductDto.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T08:23:05.518Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DeProduct.cs",
-              "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\Models\\DeProduct.cs",
-              "RelativeDocumentMoniker": "DE.DataLayer\\Models\\DeProduct.cs",
-              "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\Models\\DeProduct.cs",
-              "RelativeToolTip": "DE.DataLayer\\Models\\DeProduct.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAqwBYAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T08:23:01.952Z",
+              "DocumentIndex": 0,
+              "Title": "DE.Client",
+              "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\DE.Client.csproj",
+              "RelativeDocumentMoniker": "DE.Client\\DE.Client.csproj",
+              "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\DE.Client.csproj",
+              "RelativeToolTip": "DE.Client\\DE.Client.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-26T08:48:49.591Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DE.DataLayer",
-              "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\DE.DataLayer.csproj",
-              "RelativeDocumentMoniker": "DE.DataLayer\\DE.DataLayer.csproj",
-              "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\DE.DataLayer.csproj",
-              "RelativeToolTip": "DE.DataLayer\\DE.DataLayer.csproj",
-              "ViewState": "AgIAACAAAAAAAAAAAAArwDUAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-26T08:22:48.726Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\Context\\AppDbContext.cs",
               "RelativeDocumentMoniker": "DE.DataLayer\\Context\\AppDbContext.cs",
@@ -110,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "DeProductsController.cs",
               "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.Api\\Controllers\\DeProductsController.cs",
               "RelativeDocumentMoniker": "DE.Api\\Controllers\\DeProductsController.cs",
@@ -124,19 +101,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "DE.Client",
+              "Title": "DE.Client.csproj",
               "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\DE.Client.csproj",
               "RelativeDocumentMoniker": "DE.Client\\DE.Client.csproj",
               "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\DE.Client.csproj",
               "RelativeToolTip": "DE.Client\\DE.Client.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-11-26T07:47:57.755Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "ProductsPage.xaml",
               "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\Pages\\ProductsPage.xaml",
               "RelativeDocumentMoniker": "DE.Client\\Pages\\ProductsPage.xaml",
@@ -149,17 +126,55 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "DeProduct.cs",
+              "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\Models\\DeProduct.cs",
+              "RelativeDocumentMoniker": "DE.DataLayer\\Models\\DeProduct.cs",
+              "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\Models\\DeProduct.cs",
+              "RelativeToolTip": "DE.DataLayer\\Models\\DeProduct.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAqwBYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T08:23:01.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DeProductDto.cs",
+              "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\DTOs\\DeProducts\\DeProductDto.cs",
+              "RelativeDocumentMoniker": "DE.DataLayer\\DTOs\\DeProducts\\DeProductDto.cs",
+              "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\DTOs\\DeProducts\\DeProductDto.cs",
+              "RelativeToolTip": "DE.DataLayer\\DTOs\\DeProducts\\DeProductDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T08:23:05.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\MainWindow.xaml",
               "RelativeDocumentMoniker": "DE.Client\\MainWindow.xaml",
               "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\MainWindow.xaml",
               "RelativeToolTip": "DE.Client\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-25T06:22:27.918Z"
+              "WhenOpened": "2025-11-25T06:22:27.918Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
+              "Title": "DE.DataLayer.csproj",
+              "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\DE.DataLayer.csproj",
+              "RelativeDocumentMoniker": "DE.DataLayer\\DE.DataLayer.csproj",
+              "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.DataLayer\\DE.DataLayer.csproj",
+              "RelativeToolTip": "DE.DataLayer\\DE.DataLayer.csproj",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-26T08:22:48.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ProductsPage.xaml.cs",
               "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\Pages\\ProductsPage.xaml.cs",
               "RelativeDocumentMoniker": "DE.Client\\Pages\\ProductsPage.xaml.cs",
@@ -167,8 +182,7 @@
               "RelativeToolTip": "DE.Client\\Pages\\ProductsPage.xaml.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAswCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T05:54:51.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T05:54:51.778Z"
             }
           ]
         }

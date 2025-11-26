@@ -1,3 +1,4 @@
+C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\wwwroot\images\products\0.jpg
 C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\wwwroot\images\products\1.jpg
 C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\wwwroot\images\products\10.jpg
 C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\wwwroot\images\products\2.jpg

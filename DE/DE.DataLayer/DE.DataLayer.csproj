@@ -7,56 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Photos\0.jpg" />
-    <None Remove="Photos\1.jpg" />
-    <None Remove="Photos\10.jpg" />
-    <None Remove="Photos\2.jpg" />
-    <None Remove="Photos\3.jpg" />
-    <None Remove="Photos\4.jpg" />
-    <None Remove="Photos\5.jpg" />
-    <None Remove="Photos\6.jpg" />
-    <None Remove="Photos\7.jpg" />
-    <None Remove="Photos\8.jpg" />
-    <None Remove="Photos\9.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Photos\0.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Photos\1.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Photos\10.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Photos\2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Photos\3.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Photos\4.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Photos\5.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Photos\6.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Photos\7.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Photos\8.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Photos\9.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.10">
       <PrivateAssets>all</PrivateAssets>

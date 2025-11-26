@@ -192,7 +192,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Grid.Column="0"
-                                   Source="{Binding Photo, TargetNullValue='\1.jpg'}"
+                                   Source="{Binding Photo, TargetNullValue='/0.jpg'}"
                                    Width="150"
                                    Height="150"
                                    Margin="0,0,15,0" />
