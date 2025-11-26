@@ -22,8 +22,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -37,8 +41,7 @@
               "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\Pages\\ProductsPage.xaml",
               "RelativeToolTip": "DE.Client\\Pages\\ProductsPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-25T06:34:17.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T06:34:17.59Z"
             },
             {
               "$type": "Document",
@@ -49,8 +52,7 @@
               "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\MainWindow.xaml",
               "RelativeToolTip": "DE.Client\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-25T06:22:27.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T06:22:27.918Z"
             },
             {
               "$type": "Document",
@@ -60,7 +62,7 @@
               "RelativeDocumentMoniker": "DE.Client\\Pages\\ProductsPage.xaml.cs",
               "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\Pages\\ProductsPage.xaml.cs",
               "RelativeToolTip": "DE.Client\\Pages\\ProductsPage.xaml.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAA2wDMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-25T05:54:51.778Z",
               "EditorCaption": ""
