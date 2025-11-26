@@ -1,14 +1,4 @@
 C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\DE.Client.exe
-C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\1.jpg
-C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\10.jpg
-C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\2.jpg
-C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\3.jpg
-C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\4.jpg
-C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\5.jpg
-C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\6.jpg
-C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\7.jpg
-C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\8.jpg
-C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\9.jpg
 C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\DE.Client.deps.json
 C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\DE.Client.runtimeconfig.json
 C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\DE.Client.dll
@@ -81,3 +71,5 @@ C:\Temp\ispp21\DE\DE\DE.Client\obj\Debug\net8.0-windows\refint\DE.Client.dll
 C:\Temp\ispp21\DE\DE\DE.Client\obj\Debug\net8.0-windows\DE.Client.pdb
 C:\Temp\ispp21\DE\DE\DE.Client\obj\Debug\net8.0-windows\DE.Client.genruntimeconfig.cache
 C:\Temp\ispp21\DE\DE\DE.Client\obj\Debug\net8.0-windows\ref\DE.Client.dll
+C:\Temp\ispp21\DE\DE\DE.Client\bin\Debug\net8.0-windows\Photos\0.jpg
+C:\Temp\ispp21\DE\DE\DE.Client\obj\Debug\net8.0-windows\DE.Client_Content.g.cs

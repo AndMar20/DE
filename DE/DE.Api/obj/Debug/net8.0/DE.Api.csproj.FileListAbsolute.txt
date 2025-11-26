@@ -13,16 +13,6 @@ C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\appsettings.json
 C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\DE.Api.staticwebassets.runtime.json
 C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\DE.Api.staticwebassets.endpoints.json
 C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\DE.Api.exe
-C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\Photos\1.jpg
-C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\Photos\10.jpg
-C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\Photos\2.jpg
-C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\Photos\3.jpg
-C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\Photos\4.jpg
-C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\Photos\5.jpg
-C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\Photos\6.jpg
-C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\Photos\7.jpg
-C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\Photos\8.jpg
-C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\Photos\9.jpg
 C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\DE.Api.deps.json
 C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\DE.Api.runtimeconfig.json
 C:\Temp\ispp21\DE\DE\DE.Api\bin\Debug\net8.0\DE.Api.dll
