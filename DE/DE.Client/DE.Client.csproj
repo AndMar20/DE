@@ -12,4 +12,11 @@
     <ProjectReference Include="..\DE.DataLayer\DE.DataLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="..\DE.DataLayer\Photos\*.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>Photos\%(Filename)%(Extension)</Link>
+    </Content>
+  </ItemGroup>
+
 </Project>
