@@ -19,4 +19,50 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="..\DE.DataLayer\Photos\1.jpg" />
+    <Content Remove="..\DE.DataLayer\Photos\10.jpg" />
+    <Content Remove="..\DE.DataLayer\Photos\2.jpg" />
+    <Content Remove="..\DE.DataLayer\Photos\3.jpg" />
+    <Content Remove="..\DE.DataLayer\Photos\4.jpg" />
+    <Content Remove="..\DE.DataLayer\Photos\5.jpg" />
+    <Content Remove="..\DE.DataLayer\Photos\6.jpg" />
+    <Content Remove="..\DE.DataLayer\Photos\7.jpg" />
+    <Content Remove="..\DE.DataLayer\Photos\8.jpg" />
+    <Content Remove="..\DE.DataLayer\Photos\9.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="..\DE.DataLayer\Photos\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="..\DE.DataLayer\Photos\10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="..\DE.DataLayer\Photos\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="..\DE.DataLayer\Photos\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="..\DE.DataLayer\Photos\4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="..\DE.DataLayer\Photos\5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="..\DE.DataLayer\Photos\6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="..\DE.DataLayer\Photos\7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="..\DE.DataLayer\Photos\8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="..\DE.DataLayer\Photos\9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

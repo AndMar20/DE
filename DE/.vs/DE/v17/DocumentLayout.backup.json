@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Temp\\ispp21\\DE\\DE\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|c:\\temp\\ispp21\\de\\de\\de.client\\de.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|solutionrelative:de.client\\de.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|c:\\temp\\ispp21\\de\\de\\de.client\\pages\\productspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6DE1E186-171E-420C-B746-F9C9E30D2F7A}|DE.Client\\DE.Client.csproj|solutionrelative:de.client\\pages\\productspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +38,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "DE.Client",
+              "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\DE.Client.csproj",
+              "RelativeDocumentMoniker": "DE.Client\\DE.Client.csproj",
+              "ToolTip": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\DE.Client.csproj",
+              "RelativeToolTip": "DE.Client\\DE.Client.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-26T07:47:57.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ProductsPage.xaml",
               "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\Pages\\ProductsPage.xaml",
               "RelativeDocumentMoniker": "DE.Client\\Pages\\ProductsPage.xaml",
@@ -45,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\MainWindow.xaml",
               "RelativeDocumentMoniker": "DE.Client\\MainWindow.xaml",
@@ -56,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProductsPage.xaml.cs",
               "DocumentMoniker": "C:\\Temp\\ispp21\\DE\\DE\\DE.Client\\Pages\\ProductsPage.xaml.cs",
               "RelativeDocumentMoniker": "DE.Client\\Pages\\ProductsPage.xaml.cs",
