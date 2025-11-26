@@ -18,7 +18,7 @@ namespace DE.Api.Controllers
                 .Include(p => p.Manufacturer)
                 .Include(p => p.Supplier)
                 .ToListAsync();
-            if (!products.Any())
+            if (products.Count == 0)
                 return NotFound();
 
             // Формируем базовый URL: https://localhost:7277
